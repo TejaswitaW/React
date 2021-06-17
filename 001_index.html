@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<body>
+    <div id="mydiv">
+
+    </div>
+    <script type="text/babel">
+        function Test() {
+            const warn = () => alert("test")
+            return <button onClick={warn}>Click me</button>
+        }
+        class Hello extends React.Component {
+            render() {
+                // function we are calling give it like html tag
+                return <div>Hello React with Code<Test /></div>
+            }
+        }
+        // here we are connecting html element and react class
+        ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+
+    </script>
+
+</body>
+
+</html>
