@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// use of class component
+// use of state in class component
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: "Tree",
+      val: 0
+    }
+  }
+  apple() {
+    this.setState({ data: "Plant" })
+    this.setState({ val: this.state.val + 1 })
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>{this.state.data}</h1>
+        <h1>{this.state.val}</h1>
+        <button onClick={() => this.apple()}>Update Data</button>
+      </div>
+    );
+  }
 }
 
 export default App;
